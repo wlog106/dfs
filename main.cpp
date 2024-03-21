@@ -37,6 +37,7 @@ void dfs(int n){
 }
 
 int combin(int m,int n){
+    
     if(n>1 && m!=n){
         return combin(m-1,n)+combin(m-1,n-1);
     }
@@ -46,14 +47,17 @@ int combin(int m,int n){
     else if(n=1){
         return m;
     }
+
 }
 
 int catalan(int n){
+
     return combin(n*2,n)/(n+1);
+
 }
 
-int main()
-{
+int main(){
+
     int n;
     string b ;
     while(cin >> n){
