@@ -46,7 +46,7 @@ long long factorial(int n){
     return result;
 }
 
-long long hook(int n){
+long long catalan(int n){
     amount = factorial(n*2)/(factorial(n+1)*factorial(n));
     return amount;
 }
@@ -54,9 +54,23 @@ long long hook(int n){
 int main()
 {
     int n;
+    unsigned long long combinations;
     while(cin >> n){
-        dfs(n);
-        cout << "There are " << hook(n) << " combinations in total" << endl;
+
+        combinations = catalan(n);
+        if(combinations>1e+4){
+            cout << "There are " << combinations << " combinations in total." << endl;
+            cout << "There are too many combinations to output." << endl;
+        }
+        else if(n>12){
+            cout << "There are too many combinations to output." << endl;
+        }
+        else{
+            dfs(n);
+            cout << "There are " << combinations << " combinations in total." << endl;
+        }
+
     }
     return 0;
+
 }
