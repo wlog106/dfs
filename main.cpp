@@ -62,6 +62,7 @@ int main()
             cin >> b;
         if(b=="y"){
             dfs(n);
+            cout << endl;
         }
         else if(b=="n"){
             cout << "All right." << endl << endl;
