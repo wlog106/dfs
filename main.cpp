@@ -2,8 +2,8 @@
 #include<iostream>
 using namespace std;
 
-int l=0,r=0,current = 1;
-long long result,amount;
+
+int l=0,r=0;
 vector<int> v;
 
 void dfs(int n){
@@ -36,40 +36,36 @@ void dfs(int n){
     }
 }
 
-long long factorial(int n){
-    if(n-1>0){
-        result = n*factorial(n-1);
+int combin(int m,int n){
+    if(n>1 && m!=n){
+        return combin(m-1,n)+combin(m-1,n-1);
     }
-    else{
-        result = 1;
+    else if(m==n){
+        return 1;
     }
-    return result;
+    else if(n=1){
+        return m;
+    }
 }
 
-long long catalan(int n){
-    amount = factorial(n*2)/(factorial(n+1)*factorial(n));
-    return amount;
+int catalan(int n){
+    return combin(n*2,n)/(n+1);
 }
 
 int main()
 {
     int n;
-    unsigned long long combinations;
+    string b ;
     while(cin >> n){
-
-        combinations = catalan(n);
-        if(combinations>1e+4){
-            cout << "There are " << combinations << " combinations in total." << endl;
-            cout << "There are too many combinations to output." << endl;
-        }
-        else if(n>12){
-            cout << "There are too many combinations to output." << endl;
-        }
-        else{
+            cout << "There are " << catalan(n) << " combinations in total." << endl;
+            cout << "Do you want to output them? (y/n)" << endl;
+            cin >> b;
+        if(b=="y"){
             dfs(n);
-            cout << "There are " << combinations << " combinations in total." << endl;
         }
-
+        else if(b=="n"){
+            cout << "All right." << endl << endl;
+        }
     }
     return 0;
 
