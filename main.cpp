@@ -59,16 +59,16 @@ int catalan(int n){
 int main(){
 
     int n;
-    string b ;
+    string choice ;
     while(cin >> n){
             cout << "There are " << catalan(n) << " combinations in total." << endl;
             cout << "Do you want to output them? (y/n)" << endl;
-            cin >> b;
-        if(b=="y"){
+            cin >> choice;
+        if(choice=="y"){
             dfs(n);
             cout << endl;
         }
-        else if(b=="n"){
+        else if(choice=="n"){
             cout << "All right." << endl << endl;
         }
     }
