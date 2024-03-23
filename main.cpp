@@ -36,7 +36,7 @@ void dfs(int n){
     }
 }
 
-int combin(int m,int n){
+long long combin(int m,int n){
     
     if(n>1 && m!=n){
         return combin(m-1,n)+combin(m-1,n-1);
@@ -50,7 +50,7 @@ int combin(int m,int n){
 
 }
 
-int catalan(int n){
+long long catalan(int n){
 
     return combin(n*2,n)/(n+1);
 
@@ -61,7 +61,7 @@ int main(){
     int n;
     string choice ;
     while(cin >> n){
-        if(n<17){
+        if(n<100){
             cout << "There are " << catalan(n) << " combinations in total." << endl;
             cout << "Do you want to output them? (y/n)" << endl;
             cin >> choice;
