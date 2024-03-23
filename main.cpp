@@ -61,15 +61,20 @@ int main(){
     int n;
     string choice ;
     while(cin >> n){
+        if(n<17){
             cout << "There are " << catalan(n) << " combinations in total." << endl;
             cout << "Do you want to output them? (y/n)" << endl;
             cin >> choice;
-        if(choice=="y"){
-            dfs(n);
-            cout << endl;
+            if(choice=="y"){
+                dfs(n);
+                cout << endl;
+            }
+            else if(choice=="n"){
+                cout << "All right." << endl << endl;
+            }
         }
-        else if(choice=="n"){
-            cout << "All right." << endl << endl;
+        else{
+            cout << "Please enter an integer less than 17" << endl << endl;
         }
     }
     return 0;
