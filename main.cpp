@@ -61,7 +61,7 @@ int main(){
     int n;
     string choice ;
     while(cin >> n){
-        if(n<100){
+        if(n<19){
             cout << "There are " << catalan(n) << " combinations in total." << endl;
             cout << "Do you want to output them? (y/n)" << endl;
             cin >> choice;
@@ -74,7 +74,7 @@ int main(){
             }
         }
         else{
-            cout << "Please enter an integer less than 17" << endl << endl;
+            cout << "Please enter an integer less than 19" << endl << endl;
         }
     }
     return 0;
